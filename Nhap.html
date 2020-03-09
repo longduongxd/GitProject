@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table {
+            height: 40px;
+            width: 500px;
+            border-collapse: collapse;
+        }
+        th { align-content: center}
+    </style>
+</head>
+<body>
+<script type="text/javascript">
+    function dada(){
+    let ky = document.getElementById("AM");
+    let mmm=ky*21000;
+    document.getElementById("AM").innerHTML = "ket qua" + mmm;
+    }
+
+</script>
+<form  action="">
+    <table border="0">
+        <th>Amount</th>
+        <th>From Currency</th>
+        <th>To Currency</th>
+        <tr align="center">
+            <td>
+                <input name="Amount1" ID="AM" type="text"> <br>
+            </td>
+            <td></td>
+            <td>
+                <button type="button" onclick=dada() > Convert</button>
+            </td>
+    </table>
+</form>
+</body>
+</html>
+
