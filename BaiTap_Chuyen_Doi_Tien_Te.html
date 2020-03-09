@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table {
+            height: 40px;
+            width: 500px;
+            border-collapse: collapse;
+        }
+        th { align-content: center}
+    </style>
+</head>
+<body>
+<form action="">
+    <table border="0">
+        <th>Amount</th>
+        <th>From Currency</th>
+        <th>To Currency</th>
+        <tr align="center">
+            <td>
+                <input name="Amount1" ID="AM" type="text">
+            </td>
+            <td>
+                <select name="FCurrency" id="FC">
+                    <option value="VND"> VND</option>
+                    <option value="JPY">JPY</option>
+                    <option value="USD">USD</option>
+                    <option value="AUD">AUD</option>
+                </select>
+            </td>
+            <td>
+                <select name="TCurrency" id="TC">
+                    <option value="VND">VND</option>
+                    <option value="JPY">JPY</option>
+                    <option value="USD">USD</option>
+                    <option value="AUD">AUD</option>
+                </select>
+            </td>
+            <td>
+                <button type="button" onclick="EXChange"  > Convert</button>
+            </td>
+    </table>
+
+</form>
+<script>
+function EXChange() {
+    let VN = 1;
+    let JP = 200;
+    let US = 23200;
+    let AU = 16000;
+    let from = document.getElementById("FC").value;
+    let To = document.getElementById("TC").value;
+    let EXC=0;
+    if (from ==="VND") {
+        if(To ==="VND") {
+            let EXC =VN/VN
+        } else {
+            if (To ==="JPY") {
+                let EXC=VN/JP
+            } else {
+                if (To ===USD) {
+                    let EXC=VN/US
+                } else if(To ==="AUD") { let EXC=VN/AU}
+            }
+        }
+    }
+    if ( from ==="JPY") {
+        if (To ==="VND") {
+            let EXC=JP/VN
+        } else {
+            if (To ==="JPY") {
+                let EXC=JP/JP
+            } else {
+                if (To ==="USD") {
+                    let EXC=JP/US
+                }else {
+                    if(To ==="AUD") {let EXC=JP/AU}
+                }
+            }
+        }
+    }
+    if ( from ==="USD") {
+        if (To ==="VND") {
+            let EXC=US/VN
+        } else {
+            if (To ==="JPY") {
+                let EXC=US/JP
+            } else {
+                if (To ==="USD") {
+                    let EXC=US/US
+                }else {
+                    if(To ==="AUD") {let EXC=US/AU}
+                }
+            }
+        }
+    }
+    if ( from ==="AUD") {
+        if (To ==="VND") {
+            let EXC=AU/VN
+        } else {
+            if (To ==="JPY") {
+                let EXC=AU/JP
+            } else {
+                if (To ==="USD") {
+                    let EXC=AU/US
+                }else {
+                    if(To) {let EXC=AU/AU}
+                }
+            }
+        }
+    }
+}
+ console.log( "EXC");
+</script>
+</body>
+</html>
